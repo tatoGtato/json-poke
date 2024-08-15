@@ -2,7 +2,54 @@
 @import url('./second.css');
 
 html,
+
 body {
   height: 100%;
+  width: 100%;
   margin: 0;
+  overflow: auto;
+}
+
+h1{
+  text-align: center;
+}
+
+img{
+  width: 80%;
+}
+
+.top-bar{
+  width: 100%;
+  overflow: hidden;
+  background-color: rebeccapurple;
+}
+
+
+.column {
+  margin: 1%;
+  float: left;
+  width: 30%;
+  height: 10%;
+  padding: 10px;
+}
+
+.content-container{
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+}
+
+.row:after {
+  overflow: auto;
+  content: "";
+  display: table;
+  clear: both;
+  overflow-y: auto;
+}
+
+.card{
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  border-radius: 5px;
+  border: 2px solid black;
 }
