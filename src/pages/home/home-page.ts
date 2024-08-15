@@ -35,15 +35,13 @@ export class HomePage extends LitElement {
         pending: () => html`<p> Ini </p>`,
         complete: (pokemons) => html`
           <div class = "content-container">
-            <lu>
               ${
                 pokemons.map( (pokemon) => html`
-                  <li>
-                    <pokemon-card .pokemon = "${pokemon}"> </pokemon-card>
-              </li>
+                    <div class = "item">
+                        <pokemon-card .pokemon = "${pokemon}"> </pokemon-card>
+                    </div>
                 `)
               }
-            </lu>
           </div>
         `,
         eror: (e: any) => html`<p>Oops, something went wrong: ${e}</p>`
