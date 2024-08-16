@@ -16,6 +16,10 @@ export class HomePage extends LitElement {
     return this;
   }
 
+  params = {
+    nombre: String
+  }
+
   private _getPokemons = new Task(this, {
     task: async ([], { signal }) => {
       const response = await fetch(`http://localhost:3002/pokemon`, { signal });
@@ -29,7 +33,7 @@ export class HomePage extends LitElement {
 
   render() {
     return html`
-      <top-bar> </top-bar>
+      <top-bar .needBack = ${false}> </top-bar>
       ${this._getPokemons.render({
         initial: () => html`<p> Ini </p>`,
         pending: () => html`<p> Ini </p>`,
@@ -38,7 +42,7 @@ export class HomePage extends LitElement {
               ${
                 pokemons.map( (pokemon) => html`
                     <div class = "item">
-                        <pokemon-card .pokemon = "${pokemon}"> </pokemon-card>
+                        <pokemon-card .pokemon = "${pokemon}" @click=${() => this.pageController.navigate('second', {nombre: pokemon.name})}> </pokemon-card>
                     </div>
                 `)
               }

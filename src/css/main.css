@@ -14,8 +14,33 @@ h1{
   text-align: center;
 }
 
+h2{
+  text-align: center;
+}
+
 img{
   width: 80%;
+}
+
+ul{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+span{
+  width: fit-content;
+}
+
+button{
+  border-radius: 30px;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: 200%;
+}
+
+p{
+  display: inline;
 }
 
 .top-bar{
@@ -47,3 +72,74 @@ img{
   border-radius: 5px;
   border: 2px solid black;
 }
+.evolutions-container{
+  width: 100vw;
+  height: 90vh;
+  overflow: auto;
+  text-align: center;
+}
+
+.evolution-card{
+    margin-right: 10%;
+    margin-left: 20%;
+    margin-top: 3%;
+    width:60vw;
+    height: 50%;
+    border-radius: 15px;
+    border: 3px solid #222224;
+    border-top-color: rgb(238, 21, 21);
+    border-bottom-color: #cdc9c9;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.7);
+    transition: 0.3s;
+}
+
+.evo-grid-container {
+  display: grid;
+  grid-template-areas:
+    'header header header header header header'
+    'menu main main main main main';
+  margin: 0;
+  padding-left: 0;
+}
+
+.name {
+  grid-area: header;
+  text-align: center;
+  font-family: pokemon;
+  background-color: #b3b3b3;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  padding-left: 1%;
+  padding-right: 1%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.sprite {
+  padding: 1%;
+  grid-area: menu;
+  text-align: left; 
+  width:fit-content;
+  float:left;
+}
+
+.card-sprite{
+  width: 15vw;
+  padding-left: 2%;
+}
+
+.info {
+  width:auto;
+  grid-area: main;
+  text-align: center;
+  float: center;
+  font-family: pokemon;
+  position: relative;
+  top: 30%;
+}
+
