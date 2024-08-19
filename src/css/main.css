@@ -10,12 +10,19 @@ body {
   overflow: auto;
 }
 
+@font-face {
+  font-family: pokemon;
+  src: url(../../assets/fonts/Pokemon_Classic.ttf);
+}
+
 h1{
   text-align: center;
+  font-family: pokemon;
 }
 
 h2{
   text-align: center;
+  font-family: pokemon;
 }
 
 img{
@@ -37,16 +44,48 @@ button{
   background-repeat: no-repeat;
   background-position: bottom;
   background-size: 200%;
+  font-family: pokemon;
+  border: 3px solid black
 }
 
 p{
   display: inline;
+  font-family: pokemon;
+  font-size: medium;
+}
+
+input[type="checkbox"] {
+  appearance: none;
+  background-color: #fff;
+  margin: 0;
+  font: inherit;
+  color: currentColor;
+  width: 1.15em;
+  height: 1.15em;
+  border: 0.15em solid currentColor;
+  border-radius: 0em;
+  display: grid;
+  place-content: center;
+}
+
+input[type="checkbox"]::before {
+  content: "";
+  width: 0.65em;
+  height: 0.65em;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em var(--form-control-color);
+  background-color: rgb(238, 21, 21);
+}
+
+input[type="checkbox"]:checked::before {
+  transform: scale(1);
 }
 
 .top-bar{
   width: 100%;
   overflow: hidden;
-  background-color: rebeccapurple;
+  background-color:#b3b3b3;
 }
 
 .content-container{
@@ -66,17 +105,43 @@ p{
 }
 
 .card{
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 4px 8px 0 rgb(0, 0, 0);
   height: 100%;
   transition: 0.3s;
   border-radius: 5px;
-  border: 2px solid black;
+  padding-top: 3%;
+  border: 3px solid #222224;
+  border-top-color: rgb(238, 21, 21);
+  border-bottom-color: #cdc9c9;
+
 }
+
+.type-wrapper{
+  text-align: center;
+  background-color: #f2f2f2a1;
+  border-radius: 8%;
+  padding-top: 0%;
+  padding-left: 1%;
+  padding-right: 1%;
+  padding-bottom: 1%;
+  border: 2.5px solid;
+  margin-right: 1.5%;
+  border-color: #A8A77A;
+}
+
+
 .evolutions-container{
   width: 100vw;
   height: 90vh;
   overflow: auto;
   text-align: center;
+}
+
+.icon-button{
+  border-color: rgb(238, 21, 21);
+  border-bottom-color: rgb(238, 21, 21);
+  font-family: pokemon;
+  font-size: smaller;
 }
 
 .evolution-card{
@@ -114,8 +179,8 @@ p{
   border: 0;
   padding-top: 2%;
   padding-bottom: 2%;
-  padding-left: 1%;
-  padding-right: 1%;
+  padding-left: 2%;
+  padding-right: 2%;
   display: flex;
   justify-content: space-between;
 }
@@ -141,5 +206,31 @@ p{
   font-family: pokemon;
   position: relative;
   top: 30%;
+}
+
+.popup-container{
+  position: absolute;
+  text-align: center;
+  z-index: 1000;
+  padding-bottom: 3%;
+  height: fit-content;
+  margin-top: 5%;
+  margin-left: 20%;
+  margin-right: 20%;
+  background-color: white;
+  border-radius: 15px;
+  border: 3px solid #222224;
+  border-top-color: rgb(238, 21, 21);
+  border-bottom-color: #cdc9c9;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.7);
+  transition: 0.3s;
+}
+
+.text-input{
+  border-radius: 0px;
+  padding: 1%;
+  font-family: pokemon;
+  margin-bottom: 2%;
+  border: 3px solid;
 }
 

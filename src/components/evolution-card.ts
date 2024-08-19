@@ -2,6 +2,8 @@ import { html, LitElement } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import { Pokemon } from "../models/pokemon"
 import { PageController } from '@open-cells/page-controller';
+import {handleTypeFormat, handleTypeColors} from "../utils/type-style-handler"
+
 
 // @ts-ignore
 @customElement('evolution-card')
@@ -10,6 +12,9 @@ export class EvolutionCard extends LitElement {
 
   @property({ type: {} })
     pokemon!: Pokemon;
+
+  @property()
+    popUpstate = "";
 
   params = {
     ne: "",
@@ -21,6 +26,7 @@ export class EvolutionCard extends LitElement {
   }
 
   render() {
+    const typesList =  handleTypeFormat(this.pokemon.type);
     this.params.ne = this.pokemon.name;
     this.params.te = this.pokemon.type;
     return html`
@@ -42,7 +48,9 @@ export class EvolutionCard extends LitElement {
                 <img class = "card-sprite" src="../../assets/images/${this.pokemon.image}" alt="${this.pokemon.name} Icon">
             </div>
             <div class = "info">
-                <p> ${this.pokemon.type} </p>
+                ${typesList.map((type) => html`
+                    ${handleTypeColors(type)}
+                `)}
             </div>
         </div>
       </div>

@@ -5,7 +5,6 @@ import { customElement, property } from 'lit/decorators.js';
 // @ts-ignore
 @customElement('top-bar')
 export class TopBar extends LitElement {
-
   pageController = new PageController(this);
 
   protected createRenderRoot(): HTMLElement | DocumentFragment {

@@ -1,9 +1,9 @@
 import { html, LitElement } from 'lit';
 import { PageController } from '@open-cells/page-controller';
-import { customElement, property } from 'lit/decorators.js';
-import { Pokemon } from "../../models/pokemon"
+import { customElement, property, query } from 'lit/decorators.js';
 import "../../components/top-bar"
 import "../../components/card"
+import "../../components/popup"
 
 // @ts-ignore
 @customElement('editar-page')
@@ -28,24 +28,30 @@ export class EditarPage extends LitElement {
   newType: string = '';
 
   @property()
-  repite: boolean = false;
+  displayPopUp: string = "none";
 
   render() {
+    console.log(this.displayPopUp)
+    let buttonHandler = 
+        (this.newName=="" && this.newType=="")? html`<button disabled="disabled"> enviar </button>`
+        : html`<button @click=${() => this.enviarPushed()}> enviar </button>`;
+
     return html`
-        <h2> Edita la informacion del ${this.params.ne} <h2>
-        <form>
-            <label for="fname">Nombre del pokemon</label><br>
-            <input @input=${this.changeName} placeholder = ${this.params.ne} ><br>
-            <label for="lname">Tipo del pokemon</label><br>
-            <input @input=${this.changeType} placeholder = ${this.params.te}><br>
-            <span>
+        <top-bar .needBack = ${true}> </top-bar>
+        <pop-up .popUpstate = ${this.displayPopUp}> </pop-up>
+        <div>
+            <h2> Edita la informacion del ${this.params.ne} <h2>  
+            <form>
+                <label for="pname">Nombre del pokemon</label><br>
+                <input @input=${this.changeName} placeholder = ${this.params.ne} id = "newName" class="text-input"><br>
+                <label for="tname">Tipo del pokemon</label><br>
+                <input @input=${this.changeType} placeholder = ${this.params.te} id = "newType" class="text-input"><br>
                 <p> ¿Vas a repetir pokemon? </p>
-            </span>
-            <span>
-                <input type="checkbox" @input=${this.checked}>
-            </span><br><br>
-            <button disabled="disabled @input=${this.enviarPushed}"> enviar </button>
-            
+                <div style="text-align: center">
+                    <input type="checkbox" @input=${this.handleCheck} id="check">
+                </div><br><br>
+                ${buttonHandler}
+        </div>
         </form> 
     `;
   }
@@ -60,14 +66,36 @@ export class EditarPage extends LitElement {
     this.newType = input.value;
   }
 
-  checked() {
-    this.repite = !this.repite;
-    console.log(this.repite)
+  handleCheck(){
+    if (!this.checkInput.checked){
+        this.displayPopUp = "none"
+    }
   }
 
-  enviarPushed(event: Event) {
-    const input = event.target as HTMLInputElement;
-    this.newType = input.value;
+  @query('#newName')
+  nameInput!: HTMLInputElement;
+
+  @query('#newType')
+  typeInput!: HTMLInputElement;
+
+  @query('#check')
+  checkInput!: HTMLInputElement;
+
+  enviarPushed() {
+    if(this.checkInput.checked){
+        console.log("popap")
+        this.displayPopUp = "block"
+        
+    }
+    else{
+        this.displayPopUp = "none"
+        this.pageController.navigate('home');
+    }
+    this.newName = "";
+    this.newType = "";
+    this.nameInput.value = "";
+    this.typeInput.value = "";
+    this.checkInput.checked = false;
   }
 }
 
