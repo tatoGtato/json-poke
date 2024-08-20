@@ -9,6 +9,7 @@
 - [Open Cells](https://www.opencells.dev/)
 - [Lit](https://lit.dev/)
 - [json-server 1.0.0-beta.1](https://www.npmjs.com/package/json-server)
+- Node V18.15
 
 ## ¿Como correr la app?
 1. Clonar este repositorio de git.
