@@ -14,6 +14,9 @@ export class TopBar extends LitElement {
   @property({ type: Boolean })
     needBack!: Boolean;
 
+  @property({ type: String })
+    previous!: String;
+
   @property({ type: Function })
     actiona!: Function;
 
@@ -28,8 +31,8 @@ export class TopBar extends LitElement {
     else{
       return html`
       <div class = "top-bar"> 
-        <a @click=${() => this.pageController.navigate('home')} >Back</a>
-        <h1> POKEMON </h1>
+          <a class = "back-button" @click=${() => this.pageController.navigate(this.previous.toString())} >Back</a>
+          <h1 class = "top-bar-title"> POKEMON </h1>
       </div>`;
     }
   }

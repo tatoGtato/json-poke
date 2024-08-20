@@ -37,7 +37,7 @@ export class EditarPage extends LitElement {
         : html`<button @click=${() => this.enviarPushed()}> enviar </button>`;
 
     return html`
-        <top-bar .needBack = ${true}> </top-bar>
+        <top-bar .needBack = ${false}> </top-bar>
         <pop-up .popUpstate = ${this.displayPopUp}> </pop-up>
         <div>
             <h2> Edita la informacion del ${this.params.ne} <h2>  
@@ -47,7 +47,7 @@ export class EditarPage extends LitElement {
                 <label for="tname">Tipo del pokemon</label><br>
                 <input @input=${this.changeType} placeholder = ${this.params.te} id = "newType" class="text-input"><br>
                 <p> ¿Vas a repetir pokemon? </p>
-                <div style="text-align: center">
+                <div class = "check-container">
                     <input type="checkbox" @input=${this.handleCheck} id="check">
                 </div><br><br>
                 ${buttonHandler}

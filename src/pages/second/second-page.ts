@@ -32,7 +32,7 @@ export class SecondPage extends LitElement {
 
   render() {
     return html`
-      <top-bar .needBack = ${true}> </top-bar>
+      <top-bar .needBack = ${true} .previous = ${"home"}> </top-bar>
       <div class = "evolutions-container">   
         ${this._getPokemon.render({
           initial: () => html`<p> Ini </p>`,
