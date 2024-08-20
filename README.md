@@ -9,14 +9,14 @@
 - [Open Cells](https://www.opencells.dev/)
 - [Lit](https://lit.dev/)
 - [json-server 1.0.0-beta.1](https://www.npmjs.com/package/json-server)
-- Node V18.15
+- Node >18.15
 
 ## ¿Como correr la app?
 1. Clonar este repositorio de git.
 2. Abrir una terminal en el directorio Json-poke y correr el comando ```npm i``` para descargar todas las dependencias necesarias.
 3. En la misma terminal, correr el comando ```npm install -g json-server```
 4. En la misma terminal, correr el comando ```json-server -w pokemon.json -p 3002``` para desplegar el servidor con los pokemones.
-5. En una terminal diferente en el directorio Json-poke ejecutar el comando ```npm run dev``` para ejecutar la aplicaión.
+6. En una terminal diferente en el directorio Json-poke ejecutar el comando ```npm run dev``` para ejecutar la aplicaión.
 
 ## Funcionamiento de la app
 Poke-json cuenta con 3 pantallas principales "home-page", "evolution-page" y "editar-page".
