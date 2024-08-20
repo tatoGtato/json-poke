@@ -14,7 +14,7 @@
 1. Clonar este repositorio de git.
 2. Abrir una terminal en el directorio Json-poke y correr el comando ```npm i``` para descargar todas las dependencias necesarias.
 3. En la misma terminal, correr el comando ```npm install -g json-server```
-4. Abrir en la misma terminal, correr el comando ```json-server -w pokemon.json -p 3002``` para desplegar el servidor con los pokemones.
+4. En la misma terminal, correr el comando ```json-server -w pokemon.json -p 3002``` para desplegar el servidor con los pokemones.
 5. En una terminal diferente en el directorio Json-poke ejecutar el comando ```npm run dev``` para ejecutar la aplicaión.
 
 ## Funcionaiento de la app
