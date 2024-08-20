@@ -11,10 +11,10 @@ export const routes: RouteDefinition[] = [
   },
   {
     path: '/pokemon/:nombre',
-    name: 'second',
-    component: 'second-page',
+    name: 'evolution',
+    component: 'evolution-page',
     action: async () => {
-      await import('../pages/second/second-page.js');
+      await import('../pages/evolution/evolution-page.js');
     },
   },
   {

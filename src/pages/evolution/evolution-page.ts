@@ -6,7 +6,7 @@ import { Pokemon } from "../../models/pokemon"
 import "../../components/top-bar"
 import "../../components/evolution-card"
 
-@customElement('second-page')
+@customElement('evolution-page')
 export class SecondPage extends LitElement {
   pageController = new PageController(this);
 

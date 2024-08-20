@@ -59,11 +59,13 @@ export class EditarPage extends LitElement {
   changeName(event: Event) {
     const input = event.target as HTMLInputElement;
     this.newName = input.value;
+    this.displayPopUp = "none"
   }
 
   changeType(event: Event) {
     const input = event.target as HTMLInputElement;
     this.newType = input.value;
+    this.displayPopUp = "none"
   }
 
   handleCheck(){

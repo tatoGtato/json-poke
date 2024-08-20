@@ -25,14 +25,14 @@ export class TopBar extends LitElement {
     if (!this.needBack){
       return html`
       <div class = "top-bar"> 
-        <h1> POKEMON </h1>
+        <h1> POKEDEX </h1>
       </div>`;
     }
     else{
       return html`
       <div class = "top-bar"> 
-          <a class = "back-button" @click=${() => this.pageController.navigate(this.previous.toString())} >Back</a>
-          <h1 class = "top-bar-title"> POKEMON </h1>
+          <a class = "back-button" @click=${() => this.pageController.navigate(this.previous.toString())} >Atras</a>
+          <h1 class = "top-bar-title"> POKEDEX </h1>
       </div>`;
     }
   }

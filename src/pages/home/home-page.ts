@@ -42,7 +42,7 @@ export class HomePage extends LitElement {
               ${
                 pokemons.map( (pokemon) => html`
                     <div class = "item">
-                        <pokemon-card .pokemon = "${pokemon}" @click=${() => this.pageController.navigate('second', {nombre: pokemon.name})}> </pokemon-card>
+                        <pokemon-card .pokemon = "${pokemon}" @click=${() => this.pageController.navigate('evolution', {nombre: pokemon.name})}> </pokemon-card>
                     </div>
                 `)
               }
