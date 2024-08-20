@@ -48,6 +48,14 @@ button{
   border: 3px solid black
 }
 
+button:hover{
+  cursor: pointer;
+}
+
+a:hover{
+  cursor: pointer;
+}
+
 p{
   display: inline;
   font-family: pokemon;
@@ -66,6 +74,10 @@ input[type="checkbox"] {
   border-radius: 0em;
   display: grid;
   place-content: center;
+}
+
+input[type="checkbox"]:hover{
+  cursor: pointer;
 }
 
 input[type="checkbox"]::before {
@@ -132,7 +144,10 @@ input[type="checkbox"]:checked::before {
   border: 3px solid #222224;
   border-top-color: rgb(238, 21, 21);
   border-bottom-color: #cdc9c9;
+}
 
+.card:hover{
+  cursor: pointer;
 }
 
 .type-wrapper{

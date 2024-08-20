@@ -18,7 +18,7 @@ export const routes: RouteDefinition[] = [
     },
   },
   {
-    path: '/pokemon/:nombre/:param',
+    path: '/pokemon/:nombre/:ne',
     name: 'editar',
     component: 'editar-page',
     action: async () => {

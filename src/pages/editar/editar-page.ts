@@ -18,9 +18,9 @@ export class EditarPage extends LitElement {
   @property({ type: Object })
   params: {
     ne?: String
-    te?: String
-  } = {}
-
+    type?: String
+  } = {
+  }
   @property()
   newName: string = '';
 
@@ -40,12 +40,13 @@ export class EditarPage extends LitElement {
         <top-bar .needBack = ${false}> </top-bar>
         <pop-up .popUpstate = ${this.displayPopUp}> </pop-up>
         <div>
-            <h2> Edita la informacion del ${this.params.ne} <h2>  
+            <h2> Edita la información del ${this.params.ne
+            } <h2>  
             <form>
                 <label for="pname">Nombre del pokemon</label><br>
                 <input @input=${this.changeName} placeholder = ${this.params.ne} id = "newName" class="text-input"><br>
                 <label for="tname">Tipo del pokemon</label><br>
-                <input @input=${this.changeType} placeholder = ${this.params.te} id = "newType" class="text-input"><br>
+                <input @input=${this.changeType} placeholder = ${this.params.type} id = "newType" class="text-input"><br>
                 <p> ¿Vas a repetir pokemon? </p>
                 <div class = "check-container">
                     <input type="checkbox" @input=${this.handleCheck} id="check">
