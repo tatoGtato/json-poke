@@ -1,9 +1,9 @@
 # JSON POKE
 
 ## Indice
-1. [Frameworks y herramientas utilizadas](#Frameworks_herramientas_utilizadas)
-2. [¿Como correr la app?](#Como_correr_la_app)
-3. [Funcionamiento de la app](funcionamiento)
+1. Frameworks y herramientas utilizadas
+2. ¿Como correr la app?
+3. Funcionamiento de la app
 
 ## Frameworks y herramientas utilizadas
 - [Open Cells](https://www.opencells.dev/)
