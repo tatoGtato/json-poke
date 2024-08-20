@@ -3,7 +3,7 @@
 ## Indice
 1. [Frameworks y herramientas utilizadas](#Frameworks_herramientas_utilizadas)
 2. [¿Como correr la app?](#Como_correr_la_app)
-3. Funcionamiento de la app
+3. [Funcionamiento de la app](funcionamiento)
 
 ## Frameworks y herramientas utilizadas
 - [Open Cells](https://www.opencells.dev/)
@@ -35,3 +35,6 @@ Poke-json cuenta con 3 pantallas principales "home-page", "evolution-page" y "ed
 - En esta pantalla el usuario podra editar la información del pokmeon escogido (nombre y tipos).
 - Si el usuario no ha cambiado la información del pokemon, la aplicación no dejará al usuario avanzar.
 - Si el usuario marca la opción de "¿vas a repetir pokemon?" y le da click a "enviar", aparecá una alerta la cual le mostrará una advertencia al usuario.
+
+<img width="500" alt="Screenshot 2024-08-19 at 9 33 07 PM" src="https://github.com/user-attachments/assets/fe78aa26-21e6-4433-851a-77f18ab69b5c">
+
