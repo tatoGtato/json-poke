@@ -35,8 +35,8 @@ export class HomePage extends LitElement {
     return html`
       <top-bar .needBack = ${false}> </top-bar>
       ${this._getPokemons.render({
-        initial: () => html`<p> Ini </p>`,
-        pending: () => html`<p> Ini </p>`,
+        initial: () => html`<p> Algo paso... </p>`,
+        pending: () => html`<p> Esperando pokemones... </p>`,
         complete: (pokemons) => html`
           <div class = "content-container">
               ${

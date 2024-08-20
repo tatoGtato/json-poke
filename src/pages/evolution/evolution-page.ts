@@ -35,8 +35,8 @@ export class SecondPage extends LitElement {
       <top-bar .needBack = ${true} .previous = ${"home"}> </top-bar>
       <div class = "evolutions-container">   
         ${this._getPokemon.render({
-          initial: () => html`<p> Ini </p>`,
-          pending: () => html`<p> Ini </p>`,
+          initial: () => html`<p> Algo paso... </p>`,
+          pending: () => html`<p> Esperando pokemones... </p>`,
           complete: (pokemon) => html`
             <h2> Base pokemon </h2>
             <ul>
