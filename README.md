@@ -23,7 +23,7 @@ Poke-json cuenta con 3 pantallas principales "home-page", "evolution-page" y "ed
 - En esta pantalla, el usuario podra ver una lista de pokemones con su foto, su nombre y su respectiva foto.
 - Cuando el usuario clickee en la targeta de un pokemon, lo llevará a "evolution-page".
 
-![img](https://uredu-my.sharepoint.com/:i:/g/personal/santiago_aillon_urosario_edu_co/Ee-004QnLKZGqEC2FZZm5uEBpYLxVaAdbGlAo64X7vreTg?e=t3tTVr)
+<img width="500" alt="Screenshot 2024-08-19 at 9 20 55 PM" src="https://github.com/user-attachments/assets/3622aca3-27d7-4bda-964f-a01da30648f6">
 
 ### evolution-page
 - En esta mantalla el usuario podra ver el nombre, los tipos y la foto del pokemon seleccionado y sus evoluciones.
