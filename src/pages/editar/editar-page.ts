@@ -37,7 +37,8 @@ export class EditarPage extends LitElement {
   imgSource: string = "";
 
   render() {
-
+    var name = this.params.ne;
+    var type = this.params.type;
     return html`
         <top-bar .needBack = ${false}> </top-bar>
         <pop-up .popUpstate = ${this.displayPopUp}> </pop-up>
@@ -50,9 +51,9 @@ export class EditarPage extends LitElement {
                 </div>
                 <!-- <input id="imageUpload" type="file" id="avatar" name="avatar" accept="image/png, image/jpeg"/><br> -->
                 <label for="pname">Nombre del pokemon</label><br>
-                <input @input=${this.changeName} value = ${this.params.ne} id = "newName" class="text-input"><br>
+                <input @input=${this.changeName} value = ${name} id = "newName" class="text-input"><br>
                 <label for="tname">Tipo del pokemon</label><br>
-                <input @input=${this.changeType} value = ${this.params.type} id = "newType" class="text-input"><br>
+                <input @input=${this.changeType} value = ${type} id = "newType" class="text-input"><br>
                 <p> ¿Vas a repetir pokemon? </p>
                 <div class = "check-container">
                     <input type="checkbox" id="check" @click=${() => this.clickCheck()}>
@@ -139,9 +140,8 @@ export class EditarPage extends LitElement {
     this.newType = "";
     this.diasbleButton = true;
     this.checkInput.checked = false;
-    this.nameInput.value = this.params.ne as string
-    this.typeInput.value = this.params.type as string
     this.pageController.navigate('home');
+    window.location.reload();
   }
 }
 
