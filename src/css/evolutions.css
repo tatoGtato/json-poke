@@ -22,10 +22,22 @@
     display: grid;
     grid-template-areas:
       'header header header header header header'
-      'menu main main main main main';
+      'menu menu menu menu menu menu'
+      'main main main main main main';
     margin: 0;
     padding-left: 0;
   }
+
+  @media (min-width: 700px){
+    .evo-grid-container {
+      display: grid;
+      grid-template-areas:
+        'header header header header header header'
+        'menu main main main main main';
+      margin: 0;
+      padding-left: 0;
+    }
+}
 
   .name {
     grid-area: header;
@@ -41,6 +53,7 @@
     padding-right: 2%;
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
   }
 
   .name-title-card-evo{
@@ -55,15 +68,34 @@
     font-family: pokemon;
     font-size: large;
   }
-  
+
   .sprite {
-    padding: 1%;
     grid-area: menu;
-    text-align: left; 
+    text-align: center; 
     width:fit-content;
     float:left;
+    margin-left: auto;
+    margin-right: auto;
   }
+
+
+  @media (min-width: 700px){
+    .sprite {
+      padding: 1%;
+      grid-area: menu;
+      text-align: left; 
+      width:fit-content;
+      float:left;
+    }
+}
   
+.card-sprite-evo{
+  height: 30vh;
+  width: 25vw;
+  object-fit:contain;
+}
+
+@media (min-width: 700px){
   .card-sprite-evo{
     padding-top: 2vh;
     padding-bottom: 1vh;
@@ -72,17 +104,35 @@
     object-fit:contain;
     padding-left: 2vw;
   }
+}
   
+
   .info {
     width:auto;
     grid-area: main;
     text-align: center;
     float: center;
     font-family: pokemon;
-    position: relative;
-    top: 40%;
+    padding-bottom: 3vw;
   }
 
+  @media (min-width: 700px){
+    .info {
+      width:auto;
+      grid-area: main;
+      text-align: center;
+      float: center;
+      font-family: pokemon;
+      position: relative;
+      top: 37%;
+    }
+}
+
+
   .info p{
-    font-size: 1.5vw;
+    font-size: 3vw;
+  }
+
+  .info .type-wrapper{
+    padding-top: 2vw;
   }

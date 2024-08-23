@@ -21,7 +21,7 @@ export class PopUp extends LitElement {
         <h2> ¡ATENCIÓN! </h2>
         <p> Duplicar un pokemon no se puede hacer online. </p>
         <p> Por favor dirijase a su punto físico más cercano </p> </br></br>
-        <button @click=${() => {
+        <button class = "popup-button" @click=${() => {
           this.popUpstate = "none";
           }}> Entendido </button>
       </div>

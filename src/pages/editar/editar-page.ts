@@ -139,6 +139,8 @@ export class EditarPage extends LitElement {
     this.newType = "";
     this.diasbleButton = true;
     this.checkInput.checked = false;
+    this.nameInput.value = this.params.ne as string
+    this.typeInput.value = this.params.type as string
     this.pageController.navigate('home');
   }
 }

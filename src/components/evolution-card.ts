@@ -34,14 +34,16 @@ export class EvolutionCard extends LitElement {
                 </span>
             </div>
 
-            <div class = "sprite">
-                <img class = "card-sprite-evo" src="../../assets/images/${this.pokemon.image}" alt="${this.pokemon.name} Icon">
-            </div>
-            <div class = "info">
-                ${typesList.map((type) => html`
-                    ${handleTypeColors(type)}
-                `)}
-            </div>
+
+              <div class = "sprite">
+                  <img class = "card-sprite-evo" src="../../assets/images/${this.pokemon.image}" alt="${this.pokemon.name} Icon">
+              </div>
+              <div class = "info">
+                  ${typesList.map((type) => html`
+                      ${handleTypeColors(type)}
+                  `)}
+              </div>
+
         </div>
       </div>
     `;
