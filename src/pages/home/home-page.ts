@@ -1,18 +1,17 @@
 import { html, LitElement } from 'lit';
-import { PageController } from '@open-cells/page-controller';
 import { customElement } from 'lit/decorators.js';
 import { Task } from '@lit/task';
 import { Pokemon } from "../../models/pokemon"
 import "../../components/top-bar"
 import "../../components/card"
+import { PageController } from '@open-cells/page-controller';
 
 // @ts-ignore
 @customElement('home-page')
 export class HomePage extends LitElement {
-  pageController = new PageController(this);
-
+  pageController = new PageController(this); 
+  
   protected createRenderRoot(): HTMLElement | DocumentFragment {
-    // @ts-ignore
     return this;
   }
 

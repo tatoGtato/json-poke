@@ -22,8 +22,7 @@ export class PopUp extends LitElement {
         <p> Duplicar un pokemon no se puede hacer online. </p>
         <p> Por favor dirijase a su punto físico más cercano </p> </br></br>
         <button @click=${() => {
-          this.popUpstate = "none"
-          this.pageController.navigate('home')
+          this.popUpstate = "none";
           }}> Entendido </button>
       </div>
     `;

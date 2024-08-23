@@ -1,3 +1,98 @@
-main {
-    
+.content-container {
+    height: 80vh;
+    display: grid;
+    grid-template-columns:auto ;
+    grid-area: auto;
+    overflow: auto;
+    margin-right: 10vw;
+    margin-left: 10vw;
+}
+
+@media (min-width: 600px){
+    .content-container {
+        height: 80vh;
+        display: grid;
+        grid-template-columns:auto auto;
+        grid-area: auto;
+        overflow: auto;
+        margin-right: 10vw;
+        margin-left: 10vw;
+    }
+}
+
+@media (min-width: 1000px){
+    .content-container {
+        height: 80vh;
+        display: grid;
+        grid-template-columns:auto auto auto;
+        grid-area: auto;
+        overflow: auto;
+        margin-right: 10vw;
+        margin-left: 10vw;
+    }
+}
+
+@media (min-width: 2000px){
+    .content-container {
+        height: 80vh;
+        display: grid;
+        grid-template-columns:auto auto auto auto;
+        grid-area: auto;
+        overflow: auto;
+        margin-right: 10vw;
+        margin-left: 10vw;
+    }
+}
+
+
+.content-container .item{
+    padding: 1.5vw;
+    text-align: center
+}
+
+.card-title{
+    background-color: #b3b3b3;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+.pokemon-name-title{
+    font-size: larger;
+}
+
+.card-sprite-home{
+    padding-top: 2%;
+    padding-bottom: 2%;
+    height: 30vh;
+    width: 20vw;
+    object-fit:contain;
+}
+
+@media (min-width: 600px){
+    .card-sprite-home{
+        padding-top: 3%;
+        padding-bottom: 2%;
+        height: 20vh;
+        width: 15vw;
+        object-fit:contain;
+    }
+}
+
+
+
+.card-type{
+    padding-top: 1vh;
+    padding-bottom: 2vh;
+}
+  
+.card{
+    box-shadow: 0 4px 8px 0 rgb(0, 0, 0);
+    height: 100%;
+    transition: 0.3s;
+    background-color: rgba(255, 255, 255, 0.268);
+    border: 5px solid #222224;
+}
+  
+.card:hover{
+    cursor: pointer;
 }

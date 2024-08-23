@@ -18,13 +18,20 @@ export class Card extends LitElement {
     const typesList =  handleTypeFormat(this.pokemon.type);
     return html`
       <div class = "card"> 
-            <img src="../../assets/images/${this.pokemon.image}" alt="${this.pokemon.name} Icon">
-            <div class = "card-descriptions">
-                <p> ${this.pokemon.name} </p> </br>
-                ${typesList.map((type) => html`
-                    ${handleTypeColors(type)}
-                `)}
-            </div>
+
+        <div class = "card-title">
+          <p class = "pokemon-name-title"> ${this.pokemon.name} </p>
+        </div> 
+
+        <div>
+          <img src="../../assets/images/${this.pokemon.image}" class = "card-sprite-home" alt="${this.pokemon.name} Icon">       
+        </div>
+
+        <div class = "card-type">
+        ${typesList.map((type) => html`
+            ${handleTypeColors(type)}
+        `)}
+        </div>
       </div>
     `;
   }

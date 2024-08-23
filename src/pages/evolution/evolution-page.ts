@@ -38,13 +38,13 @@ export class SecondPage extends LitElement {
           initial: () => html`<p> Algo paso... </p>`,
           pending: () => html`<p> Esperando pokemones... </p>`,
           complete: (pokemon) => html`
-            <h2> Base pokemon </h2>
+            <h2> Pokemon base </h2>
             <ul>
               <li>
                 <evolution-card .pokemon = ${pokemon[0]}> </evolution-card>
               </li>
             </ul>
-            <h2> evolutions </h2>
+            <h2> Evoluciones </h2>
             <ul>
               ${pokemon[0].evolutions.map( (pokemon) => html`
                 <li>

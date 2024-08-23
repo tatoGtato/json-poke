@@ -22,7 +22,7 @@ export class EditarPage extends LitElement {
   } = {
   }
   @property()
-  newName: string = '';
+  newName: String | undefined = '';
 
   @property()
   newType: string = '';
@@ -30,50 +30,100 @@ export class EditarPage extends LitElement {
   @property()
   displayPopUp: string = "none";
 
+  @property()
+  diasbleButton: boolean = true;
+
+  @property()
+  imgSource: string = "";
+
   render() {
-    console.log(this.displayPopUp)
-    let buttonHandler = 
-        (this.newName=="" && this.newType=="")? html`<button disabled="disabled"> enviar </button>`
-        : html`<button @click=${() => this.enviarPushed()}> enviar </button>`;
 
     return html`
         <top-bar .needBack = ${false}> </top-bar>
         <pop-up .popUpstate = ${this.displayPopUp}> </pop-up>
-        <div>
-            <h2> Edita la información del ${this.params.ne
-            } <h2>  
+        <div class = "edit-content-container">
+            <h2> Edita la información del ${this.params.ne} <h2> 
             <form>
+              <label for="pname">Foto del pokemon</label><br>
+                <div class = "image-edit-wrapper">
+                  ${this.handleImgChange()}
+                </div>
+                <!-- <input id="imageUpload" type="file" id="avatar" name="avatar" accept="image/png, image/jpeg"/><br> -->
                 <label for="pname">Nombre del pokemon</label><br>
-                <input @input=${this.changeName} placeholder = ${this.params.ne} id = "newName" class="text-input"><br>
+                <input @input=${this.changeName} value = ${this.params.ne} id = "newName" class="text-input"><br>
                 <label for="tname">Tipo del pokemon</label><br>
-                <input @input=${this.changeType} placeholder = ${this.params.type} id = "newType" class="text-input"><br>
+                <input @input=${this.changeType} value = ${this.params.type} id = "newType" class="text-input"><br>
                 <p> ¿Vas a repetir pokemon? </p>
                 <div class = "check-container">
-                    <input type="checkbox" @input=${this.handleCheck} id="check">
-                </div><br><br>
-                ${buttonHandler}
+                    <input type="checkbox" id="check" @click=${() => this.clickCheck()}>
+                </div><br>
+               ${this.handleButtonState()}
+            </form> 
         </div>
-        </form> 
+        
     `;
   }
 
   changeName(event: Event) {
     const input = event.target as HTMLInputElement;
     this.newName = input.value;
-    this.displayPopUp = "none"
+    console.log()
+    if (input.value != this.params.ne){
+      this.diasbleButton = false;
+    }
+    else{
+      this.diasbleButton = true;
+    }
   }
 
   changeType(event: Event) {
     const input = event.target as HTMLInputElement;
     this.newType = input.value;
-    this.displayPopUp = "none"
-  }
-
-  handleCheck(){
-    if (!this.checkInput.checked){
-        this.displayPopUp = "none"
+    if (input.value != this.params.type){
+      this.diasbleButton = false;
+    }
+    else{
+      this.diasbleButton = true;
     }
   }
+
+  handleButtonState(){
+    if (this.diasbleButton){
+      return html`<button disabled class = "enviar-button"> enviar </button>`
+    }
+    else{
+      return html`<button @click=${() => this.enviarPushed()} class = "enviar-button"> enviar </button>`
+    }
+  }
+
+  handleImgChange(){
+    if (this.imgSource == ""){
+      return html`<img class = "card-sprite-edit" src="../../assets/images/${this.params.ne}.png" alt="${this.params.ne} Icon">`
+    }
+    else{
+      return html`<img class = "card-sprite-edit" src="${this.imgSource}" alt="${this.params.ne} Icon">`
+    }
+  }
+
+  // changeSprite(event: Event){
+  //   const input = event.target as HTMLInputElement;
+  //   var Flist = input.value.split("\\");
+  //   var fName = input.value.split("\\")[Flist.length-1]
+  //   this.imgSource = "../../../../../../Desktop/" + fName
+  //   console.log(this.imgSource)
+  // }
+
+  clickCheck(){
+    if (this.checkInput.checked){
+      this.displayPopUp = "block";
+    }
+    else{
+      this.displayPopUp = "none";
+    }
+  }
+
+  @query('#imageUpload')
+  imgInput!: HTMLInputElement;
 
   @query('#newName')
   nameInput!: HTMLInputElement;
@@ -85,20 +135,11 @@ export class EditarPage extends LitElement {
   checkInput!: HTMLInputElement;
 
   enviarPushed() {
-    if(this.checkInput.checked){
-        console.log("popap")
-        this.displayPopUp = "block"
-        
-    }
-    else{
-        this.displayPopUp = "none"
-        this.pageController.navigate('home');
-    }
     this.newName = "";
     this.newType = "";
-    this.nameInput.value = "";
-    this.typeInput.value = "";
+    this.diasbleButton = true;
     this.checkInput.checked = false;
+    this.pageController.navigate('home');
   }
 }
 

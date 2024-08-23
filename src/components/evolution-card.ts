@@ -13,9 +13,6 @@ export class EvolutionCard extends LitElement {
   @property({ type: {} })
     pokemon!: Pokemon;
 
-  @property()
-    popUpstate = "";
-
   protected createRenderRoot(): HTMLElement | DocumentFragment {
     return this;
   }
@@ -23,12 +20,12 @@ export class EvolutionCard extends LitElement {
   render() {
     const typesList =  handleTypeFormat(this.pokemon.type);
     return html`
-    
+      ${console.log(this.pokemon)}
       <div class = "evolution-card"> 
         <div class = "evo-grid-container"> 
             <div class="name">
                 <span class="pokename-container">
-                    <p style = "display: inline"> ${this.pokemon.name} </p>
+                    <p class = "name-title-card-evo" style = "display: inline"> ${this.pokemon.name} </p>
                 </span>
                 <span>
                     <button class="icon-button" @click=${() => this.pageController.navigate('editar', {nombre: this.pokemon.name, ne: this.pokemon.name, type: this.pokemon.type})}>
@@ -38,7 +35,7 @@ export class EvolutionCard extends LitElement {
             </div>
 
             <div class = "sprite">
-                <img class = "card-sprite" src="../../assets/images/${this.pokemon.image}" alt="${this.pokemon.name} Icon">
+                <img class = "card-sprite-evo" src="../../assets/images/${this.pokemon.image}" alt="${this.pokemon.name} Icon">
             </div>
             <div class = "info">
                 ${typesList.map((type) => html`
